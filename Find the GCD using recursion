@@ -1,0 +1,22 @@
+#include<stdio.h>
+int gcd(int, int);
+
+int main()
+{
+    int n1, n2, result;
+    printf("enter any two numbers ");
+    scanf("%d %d", &n1, &n2);
+
+    result = gcd(n1, n2);
+    printf("GCD is %d", result);
+}
+int gcd(int n1, int n2)
+{
+    int g;
+
+    if(n2 != 0)
+    {
+        g = gcd(n2, n1 % n2);
+        return g;
+    }
+}
